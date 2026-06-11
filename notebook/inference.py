@@ -102,6 +102,7 @@ class Inference:
         self,
         image: Union[Image.Image, np.ndarray],
         mask: Optional[Union[None, Image.Image, np.ndarray]],
+        with_texture_baking: bool = False,
         seed: Optional[int] = None,
         pointmap=None,
     ) -> dict:
@@ -112,7 +113,7 @@ class Inference:
             seed,
             stage1_only=False,
             with_mesh_postprocess=False,
-            with_texture_baking=False,
+            with_texture_baking=with_texture_baking,
             with_layout_postprocess=False,
             use_vertex_color=True,
             stage1_inference_steps=None,
