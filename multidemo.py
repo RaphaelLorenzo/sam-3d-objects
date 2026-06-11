@@ -17,6 +17,8 @@ def main(args):
     # load image (RGBA only, mask is embedded in the alpha channel)
     image = load_image(args.image_path)
     image_name = os.path.basename(os.path.dirname(args.image_path)).split(".")[0]
+    outdir = os.path.join(args.output_path, image_name)
+    os.makedirs(outdir, exist_ok=True)
     # mask = load_single_mask("notebook/images/shutterstock_stylish_kidsroom_1640806567", index=14)
     masks = load_masks(os.path.dirname(args.image_path), extension=".png")
 
