@@ -22,7 +22,7 @@ def main(args):
     # load model
     tag = "hf"
     config_path = f"checkpoints/{tag}/pipeline.yaml"
-    inference = Inference(config_path, compile=False)
+    inference = Inference(config_path, compile=False, with_texture_baking=True)
 
     # run model
     # output = inference(image, mask, seed=42)
@@ -30,7 +30,7 @@ def main(args):
 
     for i, out in enumerate(outputs):
         mesh = out["glb"]
-        outpath = os.path.join(args.output_path, f"{image_name}", f"object{i}.ply")
+        outpath = os.path.join(args.output_path, f"{image_name}", f"object{i}.glb")
         mesh.export(outpath)
 
 if __name__ == "__main__":
