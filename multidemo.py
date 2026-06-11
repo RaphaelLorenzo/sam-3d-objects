@@ -26,7 +26,7 @@ def main(args):
 
     # run model
     # output = inference(image, mask, seed=42)
-    outputs = [inference(image, mask, seed=42, with_texture_baking=True) for mask in masks]
+    outputs = [inference(image, mask, seed=42, with_texture_baking=True, with_mesh_postprocess=True) for mask in masks]
 
     for i, out in enumerate(outputs):
         mesh = out["glb"]
