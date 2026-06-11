@@ -22,11 +22,11 @@ def main(args):
     # load model
     tag = "hf"
     config_path = f"checkpoints/{tag}/pipeline.yaml"
-    inference = Inference(config_path, compile=False, with_texture_baking=True)
+    inference = Inference(config_path, compile=False)
 
     # run model
     # output = inference(image, mask, seed=42)
-    outputs = [inference(image, mask, seed=42) for mask in masks]
+    outputs = [inference(image, mask, seed=42, with_texture_baking=True) for mask in masks]
 
     for i, out in enumerate(outputs):
         mesh = out["glb"]
