@@ -31,6 +31,8 @@ def main(args):
     for i, out in enumerate(outputs):
         mesh = out["glb"]
         outpath = os.path.join(args.output_path, f"{image_name}", f"object{i}.glb")
+        mesh.export(outpath)
+
         outpath = os.path.join(args.output_path, f"{image_name}", f"object{i}.ply")
         mesh.export(outpath)
 
