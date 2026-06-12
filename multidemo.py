@@ -33,8 +33,8 @@ def main(args):
         outpath = os.path.join(args.output_path, f"{image_name}", f"object{i}.glb")
         mesh.export(outpath)
 
-        outpath = os.path.join(args.output_path, f"{image_name}", f"object{i}.ply")
-        mesh.export(outpath)
+        # outpath = os.path.join(args.output_path, f"{image_name}", f"object{i}.ply")
+        # mesh.export(outpath)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
